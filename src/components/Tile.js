@@ -1,4 +1,4 @@
-import styles from './Tile.module.css';
+import styles from './styles/Tile.module.css';
 
 function Tile() {
     return (

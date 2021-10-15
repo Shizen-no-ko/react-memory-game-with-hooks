@@ -1,13 +1,16 @@
 import './App.css';
 import Title from './Title';
-import Tile from './Tile';
+import Container from './components/Container';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Title/>
-        <Tile/>
+        <div>
+        <Container/>
+        </div>
+        
       </header>
     </div>
   );
