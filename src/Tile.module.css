@@ -1,0 +1,17 @@
+.tile {
+    background-color: white;
+    border: solid 5px red;
+    border-radius: 0.5rem;
+    height: 100px;
+    width: 100px;
+}
+
+.tile:hover {
+    transform: scale(95%);
+}
+
+.tile:active {
+   background-color: red;
+   border:solid 5px white;
+   transform: scale(110%); 
+}
