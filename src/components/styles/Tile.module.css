@@ -1,8 +1,10 @@
 .tile {
-    background-color: white;
-    border: solid 5px red;
+    background-color:#F78812;
+    border: solid 5px #AB6D23;
     border-radius: 0.5rem;
+    filter: drop-shadow(10px 10px 10px black); 
     height: 100px;
+    margin: 5px;
     width: 100px;
 }
 
@@ -11,7 +13,16 @@
 }
 
 .tile:active {
-   background-color: red;
-   border:solid 5px white;
+    animation-name: flip;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+   background-color: #F78812;
+   border:solid 5px #E02401;
    transform: scale(110%); 
 }
+
+@keyframes flip {
+    0%   {transform: scaleX(75%);}
+    50%  {transform: scaleX(0%);}
+    100% {transform: scaleX(100%);}
+  }

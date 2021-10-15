@@ -1,9 +1,9 @@
-import styles from './styles/Tile.module.css';
+import styles from './styles/TileText.module.css';
 
-function Tile() {
+function TileText() {
     return (
-        <div className={styles.tile}></div>
+        <h1 className={styles.tiletext}>MEMORY</h1>
     )
 };
 
-export default Tile;
+export default TileText;
