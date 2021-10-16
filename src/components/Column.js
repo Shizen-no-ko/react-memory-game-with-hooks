@@ -12,24 +12,24 @@ let shuffled = elements
   .sort((a, b) => a.sort - b.sort)
   .map(({ value }) => value)
 
-  console.log(shuffled)
+//   console.log(shuffled)
 
     var row = [];
 var rows = [];
 for (var j = 0; j < 16; j = j + 4) {
     for (var i = j; i < j + 4; i++) {
         row.push(shuffled[i]);
-        console.log(row)
-        console.log(j)
-        console.log(i)
+        // console.log(row)
+        // console.log(j)
+        // console.log(i)
     }
     rows.push(row);
     row = [];
 }
 
 // var rows = [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 2, 3], [4, 5, 6, 7]];
-console.log("here are the rows")
-console.log(rows);
+// console.log("here are the rows")
+// console.log(rows);
 
 function Column(props) {
     
