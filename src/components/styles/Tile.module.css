@@ -2,9 +2,11 @@
     background-color:#F78812;
     border: solid 5px #AB6D23;
     border-radius: 0.5rem;
-    filter: drop-shadow(10px 10px 10px black); 
+    filter: drop-shadow(10px 10px 10px black);
+    font-size: 60px; 
     height: 100px;
     margin: 5px;
+    text-align: center;
     width: 100px;
 }
 
