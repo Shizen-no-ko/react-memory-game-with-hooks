@@ -1,10 +1,11 @@
 import styles from './styles/Tile.module.css';
 import TileText from './TileText';
 
-function Tile() {
+function Tile(props) {
     return (
         <div className={styles.tile}>
-<TileText/>
+{/* <TileText/> */}
+
         </div>
     )
 };

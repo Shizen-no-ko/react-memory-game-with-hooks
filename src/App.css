@@ -1,3 +1,85 @@
+
+
+
+
+:root {
+  --yellow: #FFC312;
+ --orange: #EE5A24;
+ --green: #A3CB38;
+ --blue: #12CBC4;
+ --pink: #FDA7DF;
+ --red: #ED4C67;
+ --purple: #833471;
+ --turquoise: #006266;
+}
+
+.bgBlue {
+  background-color: var(--blue);
+}
+
+.fgBlue {
+  color: var(--blue);
+}
+
+.bgGreen {
+  background-color: var(--green);
+}
+
+.fgGreen {
+  color: var(--green);
+}
+
+.bgOrange {
+  background-color: var(--orange);
+}
+
+.fgOrange {
+  color: var(--orange);
+}
+
+.bgPink {
+  background-color: var(--pink);
+}
+
+.fgPink {
+  color: var(--pink);
+}
+
+.bgPurple {
+  background-color: var(--purple);
+}
+
+.fgPurple {
+  color: var(--purple);
+}
+
+.bgRed {
+  background-color: var(--red);
+}
+
+.fgRed {
+  color: var(--red);
+}
+
+.bgTurquoise {
+  background-color: var(--turquoise);
+}
+
+.fgTurquoise {
+  color: var(--turquoise);
+}
+
+
+.bgYellow {
+  background-color: var(--yellow);
+}
+
+.fgYellow {
+  color: var(--yellow);
+}
+
+
+
 body{
   background-color: #51050F;
 }

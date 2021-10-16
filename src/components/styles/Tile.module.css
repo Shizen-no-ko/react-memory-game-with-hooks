@@ -14,7 +14,7 @@
 
 .tile:active {
     animation-name: flip;
-    animation-duration: 0.5s;
+    animation-duration: 0.25s;
     animation-timing-function: ease-in-out;
    background-color: #F78812;
    border:solid 5px #E02401;
