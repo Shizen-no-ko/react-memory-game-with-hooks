@@ -9,9 +9,10 @@ const bgColors = ["#833471", "#12CBC4", "#ED4C67", "#EE5A24",  "#006266", "#A3CB
 
 
 function Tile(props) {
+    const modulo = 8;
     return (
-        <div className={styles.tile} style={{color: fgColors[props.item % 8], backgroundColor: bgColors[props.item % 8]}}>
-        {images[props.item % 8]}
+        <div className={styles.tile} style={{color: fgColors[props.item % modulo], backgroundColor: bgColors[props.item % modulo]}}>
+        {images[props.item % modulo]}
 {/* <TileText/> */}
 
         </div>
