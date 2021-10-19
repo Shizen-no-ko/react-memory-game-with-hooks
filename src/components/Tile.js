@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import styles from './styles/Tile.module.css';
 import TileText from './TileText';
 
@@ -11,24 +11,51 @@ const bgColors = ["#833471", "#12CBC4", "#ED4C67", "#EE5A24", "#006266", "#A3CB3
 
 
 function Tile(props) {
-    const [showFace, setShowFace] = useState(false)
-    const onClick = () => setShowFace(!showFace)
     // modulo variable for rendering according to images and color array sizes
     const modulo = 8;
+    // state for handling flipping of tiles display
+    const [showFace, setShowFace] = useState(false)
+    
+    const inputRef = React.useRef(null)
+    
+    const onClick = (e, auto = false) => {
+            setShowFace(!showFace);
+            // console.log("TURNED IS" + props.turned)
+            if(!auto){
+                props.getDataFromTile(props.item % modulo, props.item)
+            }
+    };
+
+    useEffect(() => {
+        if(showFace && props.reset){
+           setTimeout(() => {
+            inputRef.current.classList.add(styles.flip);
+                inputRef.current.click(true);
+                props.clearReset(true);
+            }, 1000);  
+            setTimeout(() => {
+                inputRef.current.classList.remove(styles.flip);
+                }, 2000);
+        }
+    })
+   
+
     return (
-        <div onClick={onClick}>
- <div className={styles.tile}  >
-            {showFace ?
-                <div style={{ color: fgColors[props.item % modulo], backgroundColor: bgColors[props.item % modulo], height: "100%" }}>
-                    {images[props.item % modulo] }
-                </div>
-                :
-                <div>
-                    <TileText />
-                </div>}
+      
+        <div onClick={onClick} ref={inputRef}>
+            <div className={styles.tile}>
+                {showFace ?
+                    <div style={{ color: fgColors[props.item % modulo], backgroundColor: bgColors[props.item % modulo], height: "100%" }}>
+                        {images[props.item % modulo]}
+                        {props.reset}
+                    </div>
+                    :
+                    <div>   
+                        <TileText />
+                    </div>}
+            </div>
         </div>
-        </div>
-       
+
     )
 };
 

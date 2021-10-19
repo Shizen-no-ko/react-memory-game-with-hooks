@@ -1,10 +1,10 @@
-import Column from './Column';
+import Game from './Game';
 import styles from './styles/Container.module.css';
 
 function Container() {
     return (
         <div className={styles.container}>
-            <Column />   
+            <Game />   
         </div>
 
     )
