@@ -3,45 +3,46 @@ import Columns from "./Columns";
 
 
 function Grid(props) {
-    const [gameState, setGameState] = useState({cardsTurned:0, firstTurned: null, firstKey: null, resetCards: false, matched: []});
+    const [gridState, setGridState] = useState({cardsTurned:0, firstTurned: null, firstKey: null, resetCards: false, matched: []});
     const clearReset = (bool) => {
         if(bool){
-            setGameState({...gameState, resetCards:false});
+         setGridState({...gridState, resetCards:false});
         }
     }
     const getDataFromTile = (cardType, cardNumber) => {
-        if(gameState.cardsTurned === 0 && !gameState.resetCards){
-            setGameState({...gameState, cardsTurned: gameState.cardsTurned + 1, firstTurned: cardType, firstKey: cardNumber});
+        if(gridState.cardsTurned === 0 && !gridState.resetCards){
+         setGridState({...gridState, cardsTurned: gridState.cardsTurned + 1, firstTurned: cardType, firstKey: cardNumber});
         };
-        if(gameState.cardsTurned === 1 && !gameState.resetCards){
-            if(gameState.firstTurned !== cardType){
+        if(gridState.cardsTurned === 1 && !gridState.resetCards){
+            if(gridState.firstTurned !== cardType){
                 console.log("NOT A MATCH");
-                setGameState({...gameState, cardsTurned: 0,  firstTurned: null, firstKey: null, resetCards: true});
-                
+             setGridState({...gridState, cardsTurned: 0,  firstTurned: null, firstKey: null, resetCards: true});
+                props.getStateOfPlay(true, false);
             } else {
-                console.log("IT'S A MATCH of cards: " + gameState.firstKey + " and " + cardNumber)
-                const tempMatch = gameState.matched
-                if(gameState.matched.indexOf(gameState.firstKey) === -1){
-                    tempMatch.push(gameState.firstKey);
+                console.log("IT'S A MATCH of cards: " + gridState.firstKey + " and " + cardNumber)
+                const tempMatch = gridState.matched
+                if(gridState.matched.indexOf(gridState.firstKey) === -1){
+                    tempMatch.push(gridState.firstKey);
                 }
-                if(gameState.matched.indexOf(cardNumber) === -1){
+                if(gridState.matched.indexOf(cardNumber) === -1){
                     tempMatch.push(cardNumber);
                 }
-                setGameState({...gameState, cardsTurned: 0,  firstTurned: null, firstKey: null, matched: tempMatch});
+             setGridState({...gridState, cardsTurned: 0,  firstTurned: null, firstKey: null, matched: tempMatch});
+             props.getStateOfPlay(true, true);
             }
         };   
     };
 
     useEffect(() => {
-        console.log("Cards Turned " + gameState.cardsTurned);
-        console.log("First Card Type = " + gameState.firstTurned);
-        console.log("RESET CARDS STATE" + gameState.resetCards);
-        console.log(gameState.matched) 
+        console.log("Cards Turned " + gridState.cardsTurned);
+        console.log("First Card Type = " + gridState.firstTurned);
+        console.log("RESET CARDS STATE" + gridState.resetCards);
+        console.log(gridState.matched) 
     });  
 
     return (
         <div>
-            <Columns rows={props.rows} turned={gameState.cardsTurned} matched={gameState.matched} getDataFromTile={getDataFromTile} reset={gameState.resetCards} clearReset={clearReset}/>
+            <Columns rows={props.rows} turned={gridState.cardsTurned} matched={gridState.matched} getDataFromTile={getDataFromTile} reset={gridState.resetCards} clearReset={clearReset}/>
         </div>
     )
 };

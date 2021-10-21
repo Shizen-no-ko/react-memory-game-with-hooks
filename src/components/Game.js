@@ -1,4 +1,9 @@
+import React, {useState, useEffect} from "react";
+
 import Grid from "./Grid";
+import ScoreDisplay from "./ScoreDisplay";
+
+
 
 const gridSize = (16);
 var elements = [];
@@ -21,9 +26,31 @@ for (var j = 0; j < 16; j = j + 4) {
 
 
 function Game() {
+
+    const[gameState, setGameState] = useState({tries: 5, pairsFound: 0}); 
+
+    const getStateOfPlay = (tryAttempted, pairFound) => {
+            if(tryAttempted && pairFound){
+                setGameState({tries: gameState.tries + 1, pairsFound: gameState.pairsFound + 1})
+            } else if (tryAttempted){
+                setGameState({...gameState, tries: gameState.tries + 1})
+            }
+    };
+
+    useEffect(() => {
+        console.log("TRIES " + gameState.tries);
+        console.log("PAIRS" + gameState.pairsFound);
+    }) 
+
+
+
+   
+
     return (
         <div>
-            <Grid rows={rows} />
+        <ScoreDisplay left="true" tries={gameState.tries} text="Tries Attempted"/>
+            <Grid rows={rows} getStateOfPlay={getStateOfPlay}/>
+            <ScoreDisplay tries={gameState.pairsFound} text="Pairs Found"/>
         </div>
     )
 };
