@@ -27,7 +27,7 @@ for (var j = 0; j < 16; j = j + 4) {
 
 function Game() {
 
-    const[gameState, setGameState] = useState({tries: 5, pairsFound: 0}); 
+    const[gameState, setGameState] = useState({tries: 0, pairsFound: 0}); 
 
     const getStateOfPlay = (tryAttempted, pairFound) => {
             if(tryAttempted && pairFound){
