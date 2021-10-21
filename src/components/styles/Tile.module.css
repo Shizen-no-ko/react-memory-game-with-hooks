@@ -3,6 +3,18 @@
     display: none;
   }
 
+  /* disables no-longer-visible tiles from clicking */
+  .noClick{
+      pointer-events: none;
+  }
+
+
+  .placeholder {
+    height: 110px;
+    margin: 5px;
+    width: 110px;
+}
+
   .show {
     display: unset;
 }
@@ -39,7 +51,7 @@
   }
 
 .flip {
-    animation-name: flip;
+    animation-name: flip;   
     animation-duration: 0.25s;
     animation-timing-function: ease-in-out;
 }

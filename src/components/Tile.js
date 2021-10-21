@@ -15,15 +15,23 @@ function Tile(props) {
     const modulo = 8;
     // state for handling flipping of tiles display
     const [showFace, setShowFace] = useState(false)
-    
+    const [showTile, setShowTile] = useState(true) 
+
     const inputRef = React.useRef(null)
+
+    if(showTile && props.matched.indexOf(props.item) !== -1){
+        inputRef.current.classList.add(styles.noClick);
+        setTimeout(() => {
+            setShowTile(false);
+            }, 1000);   
+    }
+
     
     const onClick = (e, auto = false) => {
             setShowFace(!showFace);
-            // console.log("TURNED IS" + props.turned)
             if(!auto){
                 props.getDataFromTile(props.item % modulo, props.item)
-            }
+            }       
     };
 
     useEffect(() => {
@@ -41,8 +49,8 @@ function Tile(props) {
    
 
     return (
-      
         <div onClick={onClick} ref={inputRef}>
+        {showTile ?
             <div className={styles.tile}>
                 {showFace ?
                     <div style={{ color: fgColors[props.item % modulo], backgroundColor: bgColors[props.item % modulo], height: "100%" }}>
@@ -53,9 +61,11 @@ function Tile(props) {
                     <div>   
                         <TileText />
                     </div>}
-            </div>
+            </div> 
+        :
+        <div className={styles.placeholder}></div>
+        }   
         </div>
-
     )
 };
 
