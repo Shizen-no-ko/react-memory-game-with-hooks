@@ -1,7 +1,7 @@
 .tiletext {
     color: #E02401;
     font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 25px;
-    transform: translate(-8px, 25px) rotate(-45deg);
+    font-size: 1.6vw;
+    transform: translate(-.5vw, 1.6vw) rotate(-45deg);
     
 }

@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from "react";
 
+import styles from "./styles/Game.module.css";
+
+
 import Grid from "./Grid";
 import ScoreDisplay from "./ScoreDisplay";
+import Title from "./Title";
 
 
 
@@ -47,10 +51,12 @@ function Game() {
    
 
     return (
-        <div>
+        <div className={styles.container}>
+        <Title left="true"/>
         <ScoreDisplay left="true" tries={gameState.tries} text="Tries Attempted"/>
             <Grid rows={rows} getStateOfPlay={getStateOfPlay}/>
             <ScoreDisplay tries={gameState.pairsFound} text="Pairs Found"/>
+            <Title/>
         </div>
     )
 };

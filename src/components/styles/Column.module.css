@@ -1,5 +1,15 @@
 .column {
+    
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content:space-evenly;
+    position: relative;
+}
+
+.container{
+    margin: 1rem;
+    padding-right: 1.5rem; 
+    position: relative;
+    /* width:10%; */
 }

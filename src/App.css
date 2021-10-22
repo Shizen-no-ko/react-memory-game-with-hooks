@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --yellow: #FFC312;
  --orange: #EE5A24;
  --green: #A3CB38;
@@ -72,20 +72,26 @@
 
 .fgYellow {
   color: var(--yellow);
-}
+} */
 
 body{
   background-color: #51050F;
+  margin: none;
+  padding: none;
+  width: 100vw;
 }
 
 i {
-  margin-top: 20px;
+  margin-top: 3vh;
 }
 
 .App {
+  
   display: block;
-  margin: 100px auto;
-  width: 120%;
+  /* margin: 100px auto; */
+  width: 100vw;
+  height: 100vh;
+  
   
 }
 

@@ -1,0 +1,27 @@
+.container{
+   
+    text-align: center;
+    width: 13vw;
+
+}
+
+.textLeft{
+    color: #F78812;
+    flex: 1;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 7vw;
+    position: relative;
+    top: 17vw;
+    transform: rotate(-90deg);
+}
+
+.textRight{
+    color: #F78812;
+    flex: 1;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 7vw;
+    position: relative;
+    top: -1.5vw;
+    transform: rotate(90deg);
+    width: 100%;
+}

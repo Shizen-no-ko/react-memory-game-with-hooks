@@ -1,46 +1,47 @@
 .h1{
     color: #F78812;
-    filter: drop-shadow(10px 10px 5px #1b0205);
+    filter: drop-shadow(.6vw .6vw .3vw #1b0205);
     font-family: 'ZCOOL KuaiLe', cursive;
     margin: 0;
+    width: 100%;
 }
 
 .h3{
     color: #E02401;
-    filter: drop-shadow(10px 10px 5px #1b0205);
+    filter: drop-shadow(.6vw .6vw .3vw #1b0205);
     font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 1.25rem;
+    font-size: 1.25vw;
     
 }
 
 .left {
-    border: 10px solid #AB6D23;
-    border-radius: 1rem;
+    border: .6vw solid #AB6D23;
+    border-radius: 1vw;
     border-style: outset;
     color: white;
-    font-size: 3rem;
-    height: 200px;
-    left: -200px;
+    flex: 0 0 auto;
+    font-size: 3vw;
+    height: 13vw;
     opacity: 90%;
-    position: absolute;
+    position: relative;
     text-align: center;
-    top: 100px;
-    width: 200px
+    top: 7vw;
+    width: 13vw;
 }
 
 
 .right{  
-    border: 10px solid #AB6D23;
-    border-radius: 1rem;
+    border: .6vw solid #AB6D23;
+    border-radius: 1vw;
     border-style: outset;
     color: white;
-    font-size: 3rem;
-    height: 200px;
-    right: 125px;
+    flex: 0 0 auto;
+    font-size: 3vw;
+    height: 13vw;
     opacity: 90%;
-    position: absolute;
+    position: relative;
     text-align: center;
-    top: 100px;
-    width: 200px
+    top: 7vw;
+    width: 13vw;
 }
 
