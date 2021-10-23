@@ -25,3 +25,23 @@
     transform: rotate(90deg);
     width: 100%;
 }
+
+@media (orientation: portrait) {
+    .container {
+        height: 1vw;
+      width: 100vw;
+    }
+
+    .textLeft{
+        font-size: 8vw;
+        top: 5vw;
+        transform: rotate(0deg);
+    }
+
+    .textRight{
+        font-size: 18vw;
+        top: -30vw;
+        transform: rotate(180deg);
+    }
+  }
+

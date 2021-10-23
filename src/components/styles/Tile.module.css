@@ -77,3 +77,25 @@
     text-align: center;
     width: 100px;
 } */
+
+
+@media (orientation: portrait) {
+    .placeholder {
+        height: 20.4vw;
+        margin: 1.35vw;
+        width: 20.4vw;
+    }
+    
+    
+    .tile {
+        background-color:#F78812;
+        border: solid .9vw #AB6D23;
+        border-radius: 1.5vw;
+        filter: drop-shadow(1.8vw 1.8vw 1.8vw black);
+        font-size: 12vw; 
+        height: 19.5vw;
+        margin: .9vw;
+        text-align: center;
+        width: 19.5vw;
+    }
+  }

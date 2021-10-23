@@ -45,3 +45,64 @@
     width: 13vw;
 }
 
+@media (orientation: portrait) {
+
+    .h3{
+        font-size: 2vw;
+    }
+
+    .left {
+        left: 4.5vw;
+        border: 1.8vw solid #AB6D23;
+        border-radius: 3vw;
+        font-size: 4.5vw;
+        height: 20vw;
+        top: 4vw;
+        width: 20vw;
+    }
+
+    .right{
+        left: 4.5vw;
+        border: 1.8vw solid #AB6D23;
+        border-radius: 3vw;
+        font-size: 4.5vw;
+        height: 20vw;
+        left: 72vw;
+        top: -123vw;
+        width: 20vw;
+        
+    }
+  }
+
+  @media screen and (min-width: 300px) and (max-width:390px) { 
+    .right { 
+        top: -124.5vw;
+    }
+  }
+
+  @media screen and (min-width: 390px) and (max-width:500px) { 
+    .right { 
+        top: -123.5vw;
+    }
+  }
+
+  @media screen and (min-width: 500px) and (max-width:700px) { 
+    .right { 
+        top: -122.5vw;
+    }
+  }
+
+  @media screen and (min-width: 700px) and (max-width:761px) { 
+    .right { 
+        top: -122vw;
+    }
+  }
+
+  @media screen and (min-width: 751px) and (max-width:826px) { 
+    .right { 
+        top: -121.5vw;
+    }
+  }
+
+  /* 400-895 */
+

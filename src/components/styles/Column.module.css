@@ -9,7 +9,13 @@
 
 .container{
     margin: 1rem;
-    padding-right: 1.5rem; 
+    /* padding-right: 1.5rem;  */
     position: relative;
     /* width:10%; */
 }
+
+@media (orientation: portrait) {
+    .container {
+      margin-top: 8vw;
+    }
+  }

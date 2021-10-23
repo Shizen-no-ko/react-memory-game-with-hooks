@@ -106,6 +106,12 @@ i {
   }
 }
 
+@media (orientation: portrait) {
+  i {
+    margin-top: 3.5vw;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

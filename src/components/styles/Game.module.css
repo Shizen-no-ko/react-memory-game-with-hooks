@@ -6,3 +6,11 @@
     margin-top: 4rem;
     width: 100vw;
 }
+
+@media (orientation: portrait) {
+    .container {
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+  }

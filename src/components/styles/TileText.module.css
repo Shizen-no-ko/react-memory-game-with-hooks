@@ -5,3 +5,10 @@
     transform: translate(-.5vw, 1.6vw) rotate(-45deg);
     
 }
+
+@media (orientation: portrait) {
+    .tiletext {
+        font-size: 4.8vw;
+        transform: translate(-1.5vw, 4.8vw) rotate(-45deg);
+    }
+  }

@@ -5,3 +5,9 @@
     margin:auto;
     /* width: 50rem; */
 }
+
+@media (orientation: portrait) {
+    .row {
+      /* width: 100vw; */
+    }
+  }
