@@ -1,0 +1,15 @@
+.show{
+    display: unset;
+}
+
+.text {
+    color:#E02401;
+    /* display: none; */
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 5vw;
+    left: 34.5vw;
+    margin: none;
+    position: absolute;
+    top: 15vh;   
+}
+

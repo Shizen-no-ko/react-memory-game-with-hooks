@@ -29,7 +29,7 @@ for (var j = 0; j < 16; j = j + 4) {
 }
 
 
-function Game() {
+function Game(props) {
 
     const[gameState, setGameState] = useState({tries: 0, pairsFound: 0}); 
 
@@ -44,6 +44,9 @@ function Game() {
     useEffect(() => {
         console.log("TRIES " + gameState.tries);
         console.log("PAIRS" + gameState.pairsFound);
+        if(gameState.pairsFound === gridSize / 2){
+            props.checkGameOver(true);
+        }
     }) 
 
 
