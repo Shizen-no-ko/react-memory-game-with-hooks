@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
 
 import styles from './styles/Tile.module.css';
 import TileText from './TileText';
