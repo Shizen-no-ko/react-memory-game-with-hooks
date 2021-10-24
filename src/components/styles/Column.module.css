@@ -1,5 +1,4 @@
 .column {
-    
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -9,9 +8,7 @@
 
 .container{
     margin: 1rem;
-    /* padding-right: 1.5rem;  */
     position: relative;
-    /* width:10%; */
 }
 
 @media (orientation: portrait) {

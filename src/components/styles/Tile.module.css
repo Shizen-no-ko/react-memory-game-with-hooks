@@ -1,22 +1,13 @@
-.hide {
-    background-color: #F78812 ;
-    display: none;
-  }
-
-  /* disables no-longer-visible tiles from clicking */
+/* disables no-longer-visible tiles from clicking */
   .noClick{
       pointer-events: none;
   }
 
-
+/* holds place when tile has been removed */
   .placeholder {
     height: 6.8vw;
     margin: .45vw;
     width: 6.8vw;
-}
-
-  .show {
-    display: unset;
 }
 
 .tile {
@@ -39,11 +30,12 @@
     animation-name: flip;
     animation-duration: 0.25s;
     animation-timing-function: ease-in-out;
-   background-color: #F78812;
-   border:solid .3vw #E02401;
-   transform: scale(110%); 
+    background-color: #F78812;
+    border:solid .3vw #E02401;
+    transform: scale(110%); 
 }
 
+/* flip tile animation */
 @keyframes flip {
     0%   {transform: scaleX(75%);}
     50%  {transform: scaleX(0%);}
@@ -56,36 +48,12 @@
     animation-timing-function: ease-in-out;
 }
 
-/* .placeholder {
-    height: 110px;
-    margin: 5px;
-    width: 110px;
-}
-
-  .show {
-    display: unset;
-}
-
-.tile {
-    background-color:#F78812;
-    border: solid 5px #AB6D23;
-    border-radius: 0.5rem;
-    filter: drop-shadow(10px 10px 10px black);
-    font-size: 60px; 
-    height: 100px;
-    margin: 5px;
-    text-align: center;
-    width: 100px;
-} */
-
-
 @media (orientation: portrait) {
     .placeholder {
         height: 20.4vw;
         margin: 1.35vw;
         width: 20.4vw;
     }
-    
     
     .tile {
         background-color:#F78812;

@@ -1,8 +1,6 @@
 .container{
-   
     text-align: center;
     width: 13vw;
-
 }
 
 .textLeft{
@@ -44,4 +42,3 @@
         transform: rotate(180deg);
     }
   }
-

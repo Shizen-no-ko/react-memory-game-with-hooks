@@ -11,26 +11,9 @@
     filter: drop-shadow(.6vw .6vw .3vw #1b0205);
     font-family: 'ZCOOL KuaiLe', cursive;
     font-size: 1.25vw;
-    
 }
 
-.left {
-    border: .6vw solid #AB6D23;
-    border-radius: 1vw;
-    border-style: outset;
-    color: white;
-    flex: 0 0 auto;
-    font-size: 3vw;
-    height: 13vw;
-    opacity: 90%;
-    position: relative;
-    text-align: center;
-    top: 7vw;
-    width: 13vw;
-}
-
-
-.right{  
+.left, .right {
     border: .6vw solid #AB6D23;
     border-radius: 1vw;
     border-style: outset;
@@ -69,8 +52,7 @@
         height: 20vw;
         left: 72vw;
         top: -123vw;
-        width: 20vw;
-        
+        width: 20vw;     
     }
   }
 
@@ -103,6 +85,4 @@
         top: -121.5vw;
     }
   }
-
-  /* 400-895 */
 

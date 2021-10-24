@@ -1,13 +1,5 @@
 .row {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-around; */
     margin:auto;
-    /* width: 50rem; */
 }
-
-@media (orientation: portrait) {
-    .row {
-      /* width: 100vw; */
-    }
-  }
