@@ -4,13 +4,9 @@ import Container from './components/Container';
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
-        {/* <Title/> */}
-        <div>
-        <Container/>
-        </div>
-        
-      {/* </header> */}
+      <div>
+        <Container />
+      </div>
     </div>
   );
 }
