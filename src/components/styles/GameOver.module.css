@@ -1,10 +1,8 @@
-.show{
-    display: unset;
-}
-
 .text {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
     color:#E02401;
-    /* display: none; */
     font-family: 'ZCOOL KuaiLe', cursive;
     font-size: 5vw;
     left: 34.5vw;
@@ -12,4 +10,13 @@
     position: absolute;
     top: 15vh;   
 }
+
+
+@keyframes appear {
+    0%   {transform: scaleX(0%);}
+    75%  {transform: scaleX(100%);}
+    80% {transform: rotate(-5deg);};
+    90% {transform: rotate(5deg);};
+    100% {transform: rotate(0deg);}
+  }
 
