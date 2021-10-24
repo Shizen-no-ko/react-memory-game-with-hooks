@@ -1,5 +1,6 @@
 import styles from "./styles/GameOver.module.css";
 
+// returns h1 with animated gameOver text
 function GameOver(props) {
     return (
         <div>
