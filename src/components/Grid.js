@@ -1,26 +1,38 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+
 import Columns from "./Columns";
 
 
+
 function Grid(props) {
+    // state for managing turning, matching and resetting tiles
     const [gridState, setGridState] = useState({cardsTurned:0, firstTurned: null, firstKey: null, resetCards: false, matched: [], block: false});
     const clearReset = (bool) => {
         if(bool){
          setGridState({...gridState, resetCards:false});
         }
     }
+    // function for receiving data from  a clicked tile about itself,
+    // and handling matching or not-matching of pairs
     const getDataFromTile = (cardType, cardNumber) => {
+        // if first tile is turned, store its info in state
         if(gridState.cardsTurned === 0 && !gridState.resetCards){
          setGridState({...gridState, cardsTurned: gridState.cardsTurned + 1, firstTurned: cardType, firstKey: cardNumber});
         };
+        // if second tile is turned, handle match or not match,
+        // and also handle turning back of non-matched tiles,
+        // or deleting of matched tiles
         if(gridState.cardsTurned === 1 && !gridState.resetCards){
-            setGridState({...gridState, block: true});
+            // if no match, reset own state, 
+            // pass up state of play to Game.js component for handling score display 
             if(gridState.firstTurned !== cardType){
-                // console.log("NOT A MATCH");
              setGridState({...gridState, cardsTurned: 0,  firstTurned: null, firstKey: null, resetCards: true});
                 props.getStateOfPlay(true, false);
+                // if there is a match
+                // create constant array for storing previous matched tiles state
+                // if there is a match and the two tiles are not already in the matched state, 
+                // push into constant array
             } else {
-                // console.log("IT'S A MATCH of cards: " + gridState.firstKey + " and " + cardNumber)
                 const tempMatch = gridState.matched
                 if(gridState.matched.indexOf(gridState.firstKey) === -1){
                     tempMatch.push(gridState.firstKey);
@@ -28,18 +40,13 @@ function Grid(props) {
                 if(gridState.matched.indexOf(cardNumber) === -1){
                     tempMatch.push(cardNumber);
                 }
+                // reset state, update matched state from constant array,
+                // set resetCards state to instigate turning back of tiles
              setGridState({...gridState, cardsTurned: 0,  firstTurned: null, firstKey: null, matched: tempMatch, resetCards: true});
              props.getStateOfPlay(true, true);
             }
         };   
     };
-
-    useEffect(() => {
-        console.log("Cards Turned " + gridState.cardsTurned);
-        // console.log("First Card Type = " + gridState.firstTurned);
-        // console.log("RESET CARDS STATE" + gridState.resetCards);
-        // console.log(gridState.matched) 
-    });  
 
     return (
         <div>
