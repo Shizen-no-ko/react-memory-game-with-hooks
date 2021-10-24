@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+
 import styles from './styles/Tile.module.css';
 import TileText from './TileText';
 
@@ -15,56 +16,62 @@ function Tile(props) {
     const modulo = 8;
     // state for handling flipping of tiles display
     const [showFace, setShowFace] = useState(false)
-    const [showTile, setShowTile] = useState(true) 
+    const [showTile, setShowTile] = useState(true)
 
     const inputRef = React.useRef(null)
 
-    if(showTile && props.matched.indexOf(props.item) !== -1){
+    if (showTile && props.matched.indexOf(props.item) !== -1) {
         inputRef.current.classList.add(styles.noClick);
         setTimeout(() => {
             setShowTile(false);
-            }, 1000);   
+        }, 1000);
     }
 
-    
+
     const onClick = (e, auto = false) => {
             setShowFace(!showFace);
-            if(!auto){
+            if (!auto) {
                 props.getDataFromTile(props.item % modulo, props.item)
-            }       
+            } 
     };
 
     useEffect(() => {
-        if(showFace && props.reset){
-           setTimeout(() => {
-            inputRef.current.classList.add(styles.flip);
+        if (showFace && props.reset) {
+            setTimeout(() => {
+                inputRef.current.classList.add(styles.flip);
                 inputRef.current.click(true);
                 props.clearReset(true);
-            }, 1000);  
+            }, 1000);
             setTimeout(() => {
                 inputRef.current.classList.remove(styles.flip);
-                }, 2000);
+            }, 2000);
+        }
+        if(!showFace && props.reset){
+            inputRef.current.classList.add(styles.noClick);
+            setTimeout(() => {
+                inputRef.current.classList.remove(styles.noClick);
+            }, 1000);
         }
     })
-   
+
 
     return (
         <div onClick={onClick} ref={inputRef}>
-        {showTile ?
-            <div className={styles.tile}>
-                {showFace ?
-                    <div style={{ color: fgColors[props.item % modulo], backgroundColor: bgColors[props.item % modulo], height: "100%" }}>
-                        {images[props.item % modulo]}
-                        {props.reset}
-                    </div>
-                    :
-                    <div>   
-                        <TileText />
-                    </div>}
-            </div> 
-        :
-        <div className={styles.placeholder}></div>
-        }   
+            {showTile ?
+                <div className={styles.tile}>
+                    {showFace ?
+                        <div style={{ color: fgColors[props.item % modulo], backgroundColor: bgColors[props.item % modulo], height: "100%" }}>
+                            {images[props.item % modulo]}
+                            {props.reset}
+                        </div>
+                        :
+                        <div>
+                            <TileText />
+                        </div>}
+                </div>
+                :
+                <div className={styles.placeholder}></div>
+            }
         </div>
     )
 };
