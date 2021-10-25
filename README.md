@@ -1,1 +1,1 @@
-A React based memory card game using functional components and hooks.
+A fully-responsive React based memory card game app using functional components and hooks.
